@@ -123,7 +123,7 @@ renderDisks: function() {
 		return true;
 	}, raid_err_msg);
 
-	
+
 
 	this.$("#disks-table").tablesorter({
 		headers: {
@@ -135,7 +135,7 @@ renderDisks: function() {
 	            // assign the third column (we start counting zero)
 	        3: {
 		        // disable it by setting the property sorter to false
-		        sorter: false 
+		        sorter: false
 	        }
 	    }
 	});
@@ -222,7 +222,7 @@ cancel: function(event) {
 clicked: function (event) {
 
 	var _this = this;
-	var tableStyle=" <div class="+"'control-group'"+"> <label class="+"'control-label'"+" >Selected disks</label><div class='controls'>";
+	var tableStyle="<div class="+"'col-sm-offset-2 col-sm-8 col-sm-offset-2'"+"><div class="+"'panel panel-default'"+"><div class="+"'panel-heading'"+" >You have Selected:</div><div class='panel-body'>";
 	var disktableHtml = tableStyle+"<table class= 'table table-condensed table-bordered  table-striped share-table tablesorter '"+"><thead><tr><th>No.</th><th>Disk Name</th><th>Capacity</th></tr></thead><tbody>";
 	var n = $("input:checked.disk").length;
 	$("input:checked.disk").each(function(index) {
@@ -230,7 +230,7 @@ clicked: function (event) {
 		disktableHtml = disktableHtml+"<tr><td>"+(index+1)+"</td><td>"+$(this).val()+"</td><td>"+capacity+"</td></tr>";
 	});
 
-	disktableHtml = disktableHtml+"</tbody></table></div></div>";
+	disktableHtml = disktableHtml+"</tbody></table></div></div></div>";
 	if(n>0){
 		$("#SelectedDisksTable").html(disktableHtml);
 	}else{
