@@ -86,5 +86,8 @@ http {
 			proxy_set_header Upgrade $http_upgrade;
 			proxy_set_header Connection "upgrade";
 		}
+		location /shell {
+			proxy_pass https://127.0.0.1:4200;
+		}
 	}
 }

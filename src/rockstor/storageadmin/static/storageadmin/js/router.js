@@ -85,6 +85,7 @@ var AppRouter = Backbone.Router.extend({
 	"update-certificate": "updateCertificate",
 	"email": "showEmail",
 	"email/:emailID/edit": "editEmail",
+  "terminal": "showTerminal",
 	"config-backup": "configBackup",
 	"shutdown": "showShutdownView",
 	"reboot": "showReboot",
@@ -768,7 +769,15 @@ var AppRouter = Backbone.Router.extend({
 	this.currentLayout = new EmailView({emailID: emailID});
 	$('#maincontent').empty();
 	$('#maincontent').append(this.currentLayout.render().el);
-    }
+    },
+
+    showTerminal: function() {
+  this.renderSidebar('system', 'terminal');
+  this.cleanup();
+  this.currentLayout = new TerminalView();
+  $('#maincontent').empty();
+  $('#maincontent').append(this.currentLayout.render().el);
+    },
 
 });
 
